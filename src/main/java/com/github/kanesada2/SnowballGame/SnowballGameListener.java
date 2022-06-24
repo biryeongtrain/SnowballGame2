@@ -195,7 +195,7 @@ public class SnowballGameListener implements Listener {
 				PlayerInventory inventory = player.getInventory();
 				ItemStack offHand = inventory.getItemInOffHand();
 				if(plugin.getConfig().getBoolean("Glove.Enabled_Glove") && Util.isGlove(offHand)){
-					SnowballGameAPI.tryCatch(player, projectile.getLocation(), new Vector(1,1,1), 10);
+					SnowballGameAPI.tryCatch(player, projectile.getLocation(), new Vector(1,1,1), 3);
 					return;
 				} else {
 					if(plugin.getConfig().getBoolean("Knockback_For_Players") && player.getGameMode() != GameMode.CREATIVE){
