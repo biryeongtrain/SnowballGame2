@@ -84,7 +84,7 @@ public final class Util {
 	       	 recievers.add(player);
 	     }
 	     for(Player player : recievers){
-	       	if(range > 0 && location.distanceSquared(player.getLocation()) > range){
+	       	if(range > 1 && location.distanceSquared(player.getLocation()) > range){
 	       		continue;
 	       	}
 	         player.sendMessage(msg);
