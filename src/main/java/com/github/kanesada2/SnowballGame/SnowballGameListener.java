@@ -195,7 +195,7 @@ public class SnowballGameListener implements Listener {
 				PlayerInventory inventory = player.getInventory();
 				ItemStack offHand = inventory.getItemInOffHand();
 				if(plugin.getConfig().getBoolean("Glove.Enabled_Glove") && Util.isGlove(offHand)){
-					SnowballGameAPI.tryCatch(player, projectile.getLocation(), new Vector(1,1,1), 3);
+					SnowballGameAPI.tryCatch(player, projectile.getLocation(), new Vector(2,2,2), 3);
 					return;
 				} else {
 					if(plugin.getConfig().getBoolean("Knockback_For_Players") && player.getGameMode() != GameMode.CREATIVE){
@@ -326,7 +326,7 @@ public class SnowballGameListener implements Listener {
 				if(!(plugin.getConfig().getBoolean("Glove.Enabled_Glove") && Util.isGlove(player.getInventory().getItemInOffHand()) && player.getInventory().getItemInMainHand().getType() == Material.AIR)){
 					return;
 				}
-				event.setCancelled(SnowballGameAPI.tryCatch(player, player.getEyeLocation(), new Vector(3, 4, 3), 8));
+				event.setCancelled(SnowballGameAPI.tryCatch(player, player.getEyeLocation(), new Vector(1, 2, 1), 5));
 				player.setMetadata("catchTried", new FixedMetadataValue(plugin,true));
 				plugin.getServer().getScheduler().runTaskLater(plugin, new Runnable()
 			      {
@@ -418,7 +418,7 @@ public class SnowballGameListener implements Listener {
 		}
 		Block target = event.getBlock();
 		Location loc = target.getLocation();
-		Collection <Entity> entities = loc.getWorld().getNearbyEntities(loc, 2, 2, 2);
+		Collection <Entity> entities = loc.getWorld().getNearbyEntities(loc, 1, 1, 1);
 		boolean isDropped = false;
 		for (Entity entity : entities) {
 			if(!(Util.isMyMarker(entity))) continue;
