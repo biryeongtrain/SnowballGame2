@@ -55,7 +55,7 @@ public class SnowballGameAPI {
 		}
 		if(isPitching){
 			Bukkit.getPluginManager().callEvent(new BallThrownEvent(launched));
-			Collection<Entity> entities = launched.getNearbyEntities(50, 10, 50);
+			Collection<Entity> entities = launched.getNearbyEntities(30, 10, 30);
 			for (Entity entity : entities) {
 				if(entity instanceof ArmorStand && Util.isUmpire(((ArmorStand)entity).getBoots())){
 					Location inBottom = entity.getLocation().add(new Vector(-0.5, plugin.getConfig().getDouble("Umpire.Bottom"), -0.5));
